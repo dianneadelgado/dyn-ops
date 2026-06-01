@@ -1,323 +1,378 @@
-/* ======================= */
-/* General Reset & Sticky Footer */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 
-body { 
-    font-family: "Passion One", sans-serif;
-    /* Remove the solid gradient, use a soft background image or a very faint neutral color */
-    background: url('photo-ten.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #ffffff; 
-    min-height: 100vh;
-    margin: 0;
+/* =======================
+   RESET
+======================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-main { flex: 1; padding-top: 80px; }
-
-/* Glassmorphism Navbar */
-/* Container for the floating pills */
-#navbar {
-    position: fixed;
-    top: 20px; /* Offset from top */
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centers the whole group */
-    z-index: 1000;
+html{
+    scroll-behavior:smooth;
 }
 
-.nav-container {
-    display: flex;
-    gap: 15px; /* Space between individual pills */
+body{
+    font-family:"Passion One",sans-serif;
+    color:#fff;
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.15)
+    ),
+    url('16.png') center center/cover fixed no-repeat;
 }
 
-/* Individual Pill Style */
-/* Replace your existing .nav-pill styles with this: */
-.nav-pill {
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    color: rgb(37, 101, 197); /* White text looks better on glass */
-    font-weight: 600;
-  
-
-    /* Mirroring your service-card glassmorphism */
-    background: rgba(255, 154, 87, 0.1) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    
-    /* Matching the border style */
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    
-    /* Matching the shadow */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
-    
-    transition: all 0.3s ease;
+/* =======================
+   NAVBAR
+======================= */
+#navbar{
+    position:fixed;
+    top:20px;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    z-index:1000;
 }
 
-.nav-pill:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
-}
-/* Hover effect remains to give feedback */
-.nav-pill:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+.nav-container{
+    display:flex;
+    gap:15px;
 }
 
-/* Parallax Sections */
+.nav-pill{
+    display:inline-block;
+
+    padding:12px 24px;
+
+    text-decoration:none;
+    color:white;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transition:.3s ease;
+}
+
+.nav-pill:hover{
+    background:rgba(255,255,255,.12);
+    transform:translateY(-2px);
+}
+
+/* =======================
+   HERO
+======================= */
+/* This centers everything inside the section */
 .parallax {
-    min-height: 80vh;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: center; /* Vertical alignment */
+    align-items: center;     /* Horizontal alignment */
     text-align: center;
-    color: #000000;
-    position: relative;
+}v
+/* Ensure the content block doesn't force a left alignment */
+.parallax-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Forces the H1, P, and Button to the center */
+    max-width: 900px;
+    width: 100%;
 }
-
-
-
-.glass-container {
-    /* Glassmorphism properties */
-    background: #0000001a;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
     
-    /* Layout */
-    width: 90%;
-    max-width: 1200px;
-    padding: 3rem;
-    border-radius: 30px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+#home h1{
+    font-size:5rem;
+    margin-bottom:.5rem;
 }
 
-.parallax-services {
-    background-image: url('photo-ten.png'); /* Your specific background image */
-    background-attachment: fixed;
-    background-size: cover;
-    padding: 4rem 0; /* Add space so the cards aren't touching the edge */
+#home p{
+    font-size:1.5rem;
+    margin-bottom:2rem;
 }
 
-/*h1*/
-#home .container {
-    /* 1. Remove transparency and background tint */
-    background: transparent !important;
-    
-    /* 2. Remove the blur effect */
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    
-    /* 3. Remove the border */
-    border: none !important;
-    
-    /* 4. Remove the shadow */
-    box-shadow: none !important;
-    
-    /* 5. Ensure text is readable against the background image */
-    color: #000000 !important; 
-    /*text-shadow: 0 2px 4px rgb(0, 0, 0); /* Adds a subtle shadow to ensure text pops */
+/* HERO BUTTON */
+.hero-btn{
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+    color:white;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transition:.3s ease;
 }
 
-
-/*h1*/
-@media (max-width: 768px) {
-    #home h1 { font-size: 3rem !important; }
-    #home p { font-size: 1.2rem !important; }
+.hero-btn:hover{
+    background:rgba(255,255,255,.12);
+    transform:translateY(-2px);
 }
 
+/* =======================
+   GLASS PANELS
+======================= */
+.glass{
+    background:rgba(255,255,255,.02);
 
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
 
-/* Sections & Containers */
-.container { width: 90%; max-width: 1000px; margin: 0 auto; padding: 4rem 0; }
-h1, h2 { font-family: "Passion One", sans-serif; text-transform: uppercase; }
-section h2 { font-size: 2.5rem; color: #000000; margin-bottom: 2rem; text-align: center; }
+    border:1px solid rgba(255,255,255,.08);
 
-/* Cards - Now fully glassmorphic */
-/* 1. The container should just be a layout box (transparent) */
-.service-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-    background: transparent; /* Changed from glass to transparent */
+    border-radius:30px;
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,.08),
+        inset 0 1px 0 rgba(255,255,255,.08);
 }
 
-/* Intro Card */
-#intro {
-    padding: 5rem 2rem;
+/* =======================
+   SECTIONS
+======================= */
+#intro,
+#about,
+#contact{
+    width:90%;
+    max-width:1200px;
+
+    margin:80px auto;
+    padding:50px;
+}
+
+.container{
+    width:100%;
+}
+
+h2{
+    font-size:3rem;
+    margin-bottom:25px;
+    text-align:center;
+}
+
+p{
+    line-height:1.8;
+}
+
+/* =======================
+   ABOUT SECTION
+======================= */
+.about-wrapper{
+    display:flex;
+    gap:50px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.profile-section{
+    flex:0 0 250px;
+    text-align:center;
+}
+
+.profile-image{
+    width:180px;
+    height:180px;
+
+    margin:auto;
+
+    overflow:hidden;
+
+    border-radius:50%;
+
+    border:4px solid rgba(255,255,255,.25);
+}
+
+.profile-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.profile-section h3{
+    margin-top:20px;
+}
+
+.about-content{
+    flex:1;
+    min-width:300px;
+}
+
+/* =======================
+   SERVICES
+======================= */
+#services-extended{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+.service-cards{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+}
+
+.service-card{
+    padding:30px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-5px);
+
+    background:rgba(255,255,255,.08);
+}
+
+.service-card h3{
+    margin-bottom:15px;
+}
+
+/* =======================
+   CONTACT
+======================= */
+
+#contact {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
-}
-
-#intro .container {
-    /* Background matches the warm/creamy tone of your reference */
-    background: rgba(238, 222, 203, 0.7); 
-    
-    /* Rounded corners to match the 'pill' aesthetic */
-    border-radius: 30px; 
-    
-    /* Soft border */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    
-    /* Spacing and Shadow */
-    padding: 4rem;
-    max-width: 800px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-    
-    /* Text styling */
     text-align: center;
-    color: #000000; /* Warm brown text */
-}
-
-#intro h2 {
-    color: #000000;
-    margin-bottom: 1.5rem;
-}
-
-/* Contact Section */
-#contact.parallax {
-    padding: 5rem 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
 }
 
 #contact .container {
-    /* Background matches your soft beige theme */
-    background: rgba(238, 222, 203, 0.7); 
-    
-    /* Rounded corners to match the 'pill' aesthetic */
-    border-radius: 30px; 
-    
-    /* Soft border */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    
-    /* Spacing and Shadow */
-    padding: 3rem;
-    max-width: 600px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-    
-    /* Text styling */
-    text-align: center;
-    color: #000000; /* Warm brown text */
-}
-
-/* About Section */
-#about.parallax {
-    padding: 5rem 2rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 50vh;
+    justify-content: center;
+
+    text-align: center;
 }
 
-.container, 
-.service-card {
-    /* Lowering the last number (0.3) makes it more transparent */
-    background: rgba(238, 222, 203, 0.3) !important; 
-    
-    /* Keep the border subtle */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    
-    /* Rounded corners */
-    border-radius: 30px; 
-    
-    /* Soft shadow to keep it 'floating' even when very transparent */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-    
-    padding: 3rem;
+#contact p {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-#about h2 {
-    color: #000000;
-    margin-bottom: 1.5rem;
+.downloads {
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
 }
 
-
-/* Specific styling for the links */
 .downloads a {
-    color: #000000; /* A slightly darker brown for links */
+    display: inline-block;
+
+    margin-top: 15px;
+    padding: 14px 30px;
+
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
     font-weight: 600;
-    text-decoration: underline;
-    transition: color 0.3s ease;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.05);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    transition: .3s ease;
 }
 
 .downloads a:hover {
-    color: #000000;
+    background: rgba(255,255,255,.12);
+    transform: translateY(-2px);
+}
+/* =======================
+   FOOTER
+======================= */
+footer{
+    width:90%;
+    max-width:1200px;
+
+    margin:50px auto;
+    padding:25px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.02);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
 }
 
-/* 2. Each card gets the glassmorphism effect individually */
-.service-card {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
-    backdrop-filter: blur(20px);           /* Frosted blur */
-    -webkit-backdrop-filter: blur(20px);
-    
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-    
-    /* Ensure text is readable */
-    color: #000000; 
-    text-align: center;
-    transition: transform 0.3s ease;
-}
+/* =======================
+   MOBILE
+======================= */
+@media(max-width:768px){
 
-/* Optional: nice hover effect */
-.service-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-
-footer {
-    /* 1. Ultra-transparent background to make it look like 'glass' */
-    background: rgba(255, 255, 255, 0.05) !important; 
-    
-    /* 2. Frosted glass effect */
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    
-    /* 3. Subtle, semi-transparent border to define the shape */
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    
-    /* 4. Rounded pill shape */
-    border-radius: 50px; 
-    
-    /* 5. Layout and Spacing */
-    width: 90%;
-    max-width: 800px;
-    margin: 2rem auto; 
-    padding: 2rem;
-    
-    /* 6. Text and shadow */
-    color: #000000;
-    text-align: center;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-    
-    /* Ensures it stays at the bottom of your flex container */
-    margin-top: auto;
-}
-
-
-/* Mobile Menu */
-.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-.hamburger span { width: 25px; height: 3px; background: #333; }
-
-@media (max-width: 768px) {
-    .nav-links {
-        position: fixed; top: 80px; left: -100%; flex-direction: column;
-        background: rgba(255, 255, 255, 0.9); width: 100%; height: calc(100vh - 80px);
-        align-items: center; justify-content: center; transition: 0.3s;
+    #home h1{
+        font-size:3rem;
     }
-    .nav-links.active { left: 0; }
-    .hamburger { display: flex; }
+
+    #home p{
+        font-size:1.1rem;
+    }
+
+    h2{
+        font-size:2rem;
+    }
+
+    .about-wrapper{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .nav-container{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    #intro,
+    #about,
+    #contact{
+        padding:30px;
+    }
 }
+
+V
